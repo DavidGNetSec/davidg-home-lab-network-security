@@ -1,5 +1,11 @@
 # DavidG Home Lab | Network Engineering & Security
 
+![DavidG Home Lab project banner](./assets/project-banner.svg)
+
+**Professional focus:** Network engineering, network administration and infrastructure security. **Certification:** Cisco CCNA.
+
+[Proposed network topology](./01-network-architecture/planned-topology.md) · [Project progress tracker](./09-project-documentation/progress.md)
+
 A hands-on enterprise IT environment for designing, deploying, securing, monitoring, and troubleshooting network and system infrastructures.
 
 ## 1. Lab Equipment
