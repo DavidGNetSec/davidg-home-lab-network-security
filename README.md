@@ -1,4 +1,4 @@
-# Home Lab | Network & Security Engineering
+# DavidG Home Lab | Network Engineering & Security
 
 A hands-on enterprise IT environment for designing, deploying, securing, monitoring, and troubleshooting network and system infrastructures.
 
@@ -54,26 +54,20 @@ A hands-on enterprise IT environment for designing, deploying, securing, monitor
 
 ## 5. Monitoring and Security Architecture
 
-**Monitoring and security tools:**
-- Zabbix — Network and Infrastructure Monitoring
-- Wazuh — Security Monitoring and Analysis
-- Wireshark — Packet Capture and Traffic Analysis
-- Nmap — Network Discovery and Security Assessment
+- Wireshark — packet capture and protocol analysis.
+- Nmap / Zenmap — authorized network discovery and port scanning.
 
 ### Planned Monitoring Architecture
 
+The Windows workstation will use Wireshark for on-demand packet analysis and Nmap / Zenmap for authorized discovery and service assessment. These are not continuous monitoring or alerting platforms. Capture locally or through a configured switch SPAN port when supported. No additional monitoring software or Linux monitoring servers are in scope.
+
 ```mermaid
 flowchart TD
-    A[Network Devices] -->|SNMP| B[Zabbix]
-    A -->|Syslog| C[Wazuh]
-    D[Servers and Endpoints] -->|Security Agents| C
-    A -->|Mirrored Traffic SPAN| E[Wireshark]
-    F[Admin Workstation] -->|Authorized Scanning| G[Nmap]
-
-    B --> H[Network Monitoring and Alerts]
-    C --> I[Security Monitoring and Alerts]
-    E --> J[Packet Analysis]
-    G --> K[Network Discovery and Assessment]
+    A[Cisco lab devices] -->|Local or mirrored traffic| B[Wireshark]
+    C[Windows workstation] -->|Authorized scans| A
+    C --> D[Nmap / Zenmap]
+    B --> E[Sanitized analysis notes]
+    D --> E
 ```
 
 ## 6. Engineering Objectives
@@ -95,3 +89,15 @@ All technologies are planned learning and implementation areas. Hardware, softwa
 ## 8. Security
 
 All configurations and testing will be performed in an authorized lab environment. Passwords, credentials, private keys, tokens and sensitive network information will never be published.
+
+## 9. Project sections
+
+- [network architecture](./01-network-architecture/README.md)
+- [device inventory](./02-device-inventory/README.md)
+- [network configuration](./03-network-configuration/README.md)
+- [network security](./04-network-security/README.md)
+- [network monitoring](./05-network-monitoring/README.md)
+- [network administration](./06-network-administration/README.md)
+- [security and auditing](./07-security-and-auditing/README.md)
+- [troubleshooting and testing](./08-troubleshooting-and-testing/README.md)
+- [project documentation](./09-project-documentation/README.md)
